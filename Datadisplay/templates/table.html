@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang = "en"> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="table_button.js"></script>
+<script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+	<div class="bg-dark">
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>Government Spending Data Project</title>
+			<h1 class="text-light bg-dark col-sm-12"><b>US Government Spending Data Project</b></h1>
+			<div class="bg-dark">
+				<h6 class="text-light Arial bg-dark col-sm-12">This table shows the respective budgets of various US government agencies as indexed by USASpending.gov.
+				</h6>
+			</div>
+			<div class="bg-dark col-sm-2">
+				<button class="btn btn-info" onClick="window.location.href=window.location.href">Fetch Data</button>
+			</div>
+			<div class="col-sm-12 overflow-auto">
+				<body>
+					<table id="table1" class="sortable table-dark table-striped 
+					table-bordered table-hover">
+						<tr>
+							{% for key in key_headers %}
+							<th class="text-center"> {{key}} </th>
+							{% endfor %}
+						</tr>
+						{% for val_list in values %}
+							<tr> 
+								{% for val in val_list %}
+								<td class="text-center">{{val}}</td>
+								{% endfor %}
+							</tr>
+						{% endfor %}
+					</table>
+				</body>
+			</div>
+		</head>
+	</div>
+</html>
