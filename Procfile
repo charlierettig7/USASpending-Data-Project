@@ -1,0 +1,1 @@
+web: gunicorn <USAspending>.wsgi --log-file -
